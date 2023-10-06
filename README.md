@@ -1,106 +1,37 @@
-[![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
+The folder 'data' contains the stock data for numerical experiments, which is selected from the component stocks of the S&P 500 Index.
+The folder 'code' contains the matlab code for general problems.
+The folder 'code for sdp' contains the matlab code for SDP problems.
 
-# CacheTest
+In the folder 'data', '50 stocks.xlsx' and '100 stocks.xlsx' represent the weekly returns for sample sizes of n=50 and n=100, respectively. 
+The horizontal heading of the table displays the stock names. The vertical title shows the transaction dates from Sept. 2006 to Dec. 2021. 
+Additionally, 'port1 mean.txt' and 'port1 covariance.txt' are files containing the mean and covariance matrix of the port1 data, respectively. 
+The data for ports 2-4 are the same as described above.
 
-This archive is distributed in association with the [INFORMS Journal on
-Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
+The folder 'code' contains the main programs 'main.m' and 'main2.m' for general problems. 
+Both programs utilize the branch and bound method as their basic framework.    
+'traverse.m' is designed for the method of exhaustion.
 
-The software and data in this repository are a snapshot of the software and data
-that were used in the research reported on in the paper 
-[This is a Template](https://doi.org/10.1287/ijoc.2019.0000) by T. Ralphs. 
-The snapshot is based on 
-[this SHA](https://github.com/tkralphs/JoCTemplate/commit/f7f30c63adbcb0811e5a133e1def696b74f3ba15) 
-in the development repository. 
+To compare different calculation methods, various functions can be employed. The core of the branch and bound
+algorithm is the lower bound. The pruning efficiency is better when the lower bound is higher. 
+'findlb_function.m' provides the lower bound for the interval spilt method.
+'findlb_gradient.m' provides the lower bound for the supergradient method.
+'findlb_ball.m' provides the lower bound for the ball bound.
+'findlb_box.m' provides the lower bound for the box bound.
+'findlb_continuous.m' provides the lower bound for the continuous relaxation.
 
-**Important: This code is being developed on an on-going basis at 
-https://github.com/tkralphs/JoCTemplate. Please go there if you would like to
-get a more recent version or would like support**
+In addition, 'cplex_lizi.m' and 'scip_cpr.m' contain the codes for CPLEX and SCIP, respectively. CPLEX and SCIP are both
+well-known integer programming solvers. The comparison with these commercial solvers can judge the effectiveness of our algorithm.
 
-## Cite
+In the folder 'code for sdp', 'main4.m' is the main program for SDP problems.
+To test different methods in calculations, various functions can be utilized. Here, we provide algorithms for different diagonal matrices.
+'findlb_our.m' corresponds to our proposed method.
+'findlb_sdp.m' corresponds to the method proposed by Zheng et al. (2014).
+'findlb_eig.m' is for the method using the minimum eigenvalue.
 
-To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
-
-https://doi.org/10.1287/ijoc.2019.0000
-
-https://doi.org/10.1287/ijoc.2019.0000.cd
-
-Below is the BibTex for citing this snapshot of the respoitory.
-
-```
-@article{CacheTest,
-  author =        {T. Ralphs},
-  publisher =     {INFORMS Journal on Computing},
-  title =         {{CacheTest}},
-  year =          {2020},
-  doi =           {10.1287/ijoc.2019.0000.cd},
-  url =           {https://github.com/INFORMSJoC/2019.0000},
-}  
-```
-
-## Description
-
-The goal of this software is to demonstrate the effect of cache optimization.
-
-## Building
-
-In Linux, to build the version that multiplies all elements of a vector by a
-constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
-paper), stepping K elements at a time, execute the following commands.
-
-```
-make mult
-```
-
-Alternatively, to build the version that sums the elements of a vector (used
-to obtain the results [Figure 2](results/sum-test.png) in the paper), stepping K
-elements at a time, do the following.
-
-```
-make clean
-make sum
-```
-
-Be sure to make clean before building a different version of the code.
-
-## Results
-
-Figure 1 in the paper shows the results of the multiplication test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
-
-![Figure 1](results/mult-test.png)
-
-Figure 2 in the paper shows the results of the sum test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
-
-![Figure 1](results/sum-test.png)
-
-## Replicating
-
-To replicate the results in [Figure 1](results/mult-test), do either
-
-```
-make mult-test
-```
-or
-```
-python test.py mult
-```
-To replicate the results in [Figure 2](results/sum-test), do either
-
-```
-make sum-test
-```
-or
-```
-python test.py sum
-```
-
-## Ongoing Development
-
-This code is being developed on an on-going basis at the author's
-[Github site](https://github.com/tkralphs/JoCTemplate).
-
-## Support
-
-For support in using this software, submit an
-[issue](https://github.com/tkralphs/JoCTemplate/issues/new).
+The results are presented in the numerical experiments section of the paper. 
+Table 1 shows the results obtained by our algorithm and the exhaustive algorithm. 
+Figure 1 explains the searching process and the pruning effect of the lower bound. 
+Table 2 displays the results of different bounds based on '50 stocks.xlsx' and '100 stocks.xlsx'. 
+Table 3 also illustrates the results of different bounds based on 'port1 mean.txt', 'port1 covariance.txt' and so on. 
+Table 4 demonstrates the results of different diagonal matrices based on '50 stocks.xlsx' and '100 stocks.xlsx'. 
+Table 5 presents the results of different methods based on '50 stocks.xlsx' and '100 stocks.xlsx'.
