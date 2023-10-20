@@ -49,8 +49,7 @@ Additionally, [port1 mean](data/port1_mean.txt) and [port1 covariance](data/port
 ## Code files
 
 The folder [code](code) contains the main programs [main](code/main.m) and [main2](code/main2.m) for general problems. 
-Both programs utilize the branch and bound method as their basic framework.    
-[traverse](code/traverse.m) is designed for the method of exhaustion.
+Both programs utilize the branch and bound method as their basic framework. [traverse](code/traverse.m) is designed for the method of exhaustion.
 
 To compare different calculation methods, various functions can be employed. The core of the branch and bound
 algorithm is the lower bound. The pruning efficiency is better when the lower bound is higher. 
