@@ -23,7 +23,7 @@ Below is the BibTex for citing this snapshot of the respoitory.
   author =        {Wei Xu and Jie Tang and Ka Fai Cedric Yiu and Jian Wen Peng},
   publisher =     {INFORMS Journal on Computing},
   title =         {An Efficient Global Optimal Method for Cardinality Constrainted Portfolio Optimization},
-  year =          {2022},
+  year =          {2023},
   doi =           {10.1287/ijoc.2022.0344.cd},
   url =           {https://github.com/INFORMSJoC/2022.0344},
 }  
@@ -74,7 +74,7 @@ To test different methods in calculations, various functions can be utilized. He
 The results are presented in the numerical experiments section of the paper. 
 [Table 1](results/Table_1_Verification_of_the_global_optimality.xlsx) shows the results obtained by our algorithm and the exhaustive algorithm. 
 [Figure 1](results/Figure_1_Searching_process_of_our_method.png) explains the searching process and the pruning effect of the lower bound. 
-[Table 2](results/Table_2_Comparison_among_different_lower_bounds_based_on_S&P_500.xlsx) displays the results of different bounds based on [50 stocks](data/50 stocks.xlsx) and [100 stocks](data/100 stocks.xlsx). 
+[Table 2](results/Table_2_Comparison_among_different_lower_bounds_based_on_S&P_500.xlsx) displays the results of different bounds based on [50 stocks](data/50_stocks.xlsx) and [100 stocks](data/100_stocks.xlsx). 
 [Table 3](results/Table_3_Comparison_among_different_lower_bounds_on_common_data_sets.xlsx) also illustrates the results of different bounds based on [port1 mean](data/port1_mean.txt), [port1 covariance](data/port1_covariance.txt) and so on. 
 [Table 4](results/Table_4_Comparison_among_different_diagonal_matrices.xlsx) demonstrates the results of different diagonal matrices based on [50 stocks](data/50_stocks.xlsx) and [100 stocks](data/100_stocks.xlsx). 
 [Table 5](results/Table_5_Comparison_among_different_methods_based_on_S&P_500.xlsx) presents the results of different methods based on [50 stocks](data/50_stocks.xlsx) and [100 stocks](data/100_stocks.xlsx).
